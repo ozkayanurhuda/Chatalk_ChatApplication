@@ -719,33 +719,36 @@ class ChatScreenState extends State<ChatScreen> {
   }
 
 //----------------------------9GET IMAGE--------------------------
+  ImagePicker imagePicker = ImagePicker();
   Future getImage() async {
-    //imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-    // imageFile = await ImagePicker().getImage(source: ImageSource.gallery) as File;
-    ImagePicker imagePicker = ImagePicker();
-    PickedFile pickedFile;
-    pickedFile = await imagePicker.getImage(source: ImageSource.gallery);
-    File imageFile = File(pickedFile.path);
+    final pickedFile = await imagePicker.getImage(source: ImageSource.gallery);
 
-    if (imageFile != null) {
-      setState(() {
-        isLoading = true;
-      });
-    }
-    uploadImageFile();
+    File file = File(pickedFile.path);
+
+    //this was also error :)
+    setState(() {
+      imageFile = file;
+      isLoading = true;
+    });
+
+    uploadImageFile(imageFile);
   }
 
 //-------------------------10UPLOAD IMAGE------------------------------
-  Future uploadImageFile() async {
+  Future uploadImageFile(File imageFileNew) async {
     String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+
     storageRef.Reference storageReference =
         FirebaseStorage.instance.ref().child(fileName);
 
     storageRef.UploadTask storageUploadTask =
-        storageReference.putFile(imageFile);
+         storageReference.putFile(imageFileNew);
 
     storageRef.TaskSnapshot storageTaskSnapshot =
-        await storageUploadTask.whenComplete(() {});
+        await storageUploadTask.whenComplete(()
+        {
+
+        });
 
     String downloadUrl = await storageTaskSnapshot.ref.getDownloadURL();
     imageUrl = downloadUrl;
