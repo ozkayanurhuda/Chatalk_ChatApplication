@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "129476494209",
+    "project_id": "chatalk-chat-application",
+    "storage_bucket": "chatalk-chat-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129476494209:android:3a487a0742d1e6c4985e80",
+        "android_client_info": {
+          "package_name": "com.nurozkaya.chatalk_chat_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129476494209-i8oia25aql7fueudfihj2mood88480c5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nurozkaya.chatalk_chat_application",
+            "certificate_hash": "b7a33f887f7324658979bcc2d2b9d516e5400a51"
+          }
+        },
+        {
+          "client_id": "129476494209-mho15je7h28gn0s4qgqghp9i60489ptr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKoQ9gjCuYoSWIQcC_6b6dggjW-jU4i_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129476494209-mho15je7h28gn0s4qgqghp9i60489ptr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
