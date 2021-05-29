@@ -1,3 +1,4 @@
+import 'package:chatalk_chat_application/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -10,13 +11,18 @@ class FullPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        leading: IconButton(
+          color: white,
+          icon:Icon(Icons.arrow_back_ios_outlined),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor:primaryColor ,
         iconTheme: IconThemeData(
-            color: Colors.white
+            color: white
         ),
         title: Text(
           "Full Image",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: titleTextStyle,
         ),
         centerTitle: true,
       ),

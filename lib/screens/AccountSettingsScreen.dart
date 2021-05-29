@@ -24,6 +24,11 @@ class PreSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          color: white,
+          icon:Icon(Icons.arrow_back_ios_outlined),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         iconTheme: IconThemeData(
           color:white,
         ),
