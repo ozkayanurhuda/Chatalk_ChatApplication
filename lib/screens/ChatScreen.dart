@@ -51,7 +51,7 @@ class Chat extends StatelessWidget {
         iconTheme: IconThemeData(color: white),
         title: Text(
           receiverName,
-          style: TextStyle(color: white, fontWeight: FontWeight.w500),
+          style: titleTextStyle,
         ),
         centerTitle: true,
       ),
@@ -212,8 +212,8 @@ class ChatScreenState extends State<ChatScreen> {
                   stickerImage: "images/mimi2.gif",
                 ),
                 EmojiTextButton(
-                  onPressed: () => onSendMessage("mimi3", 2),
-                  stickerImage: "images/mimi3.gif",
+                  onPressed: () => onSendMessage("mimi8", 2),
+                  stickerImage: "images/mimi8.gif",
                 ),
               ],
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -246,8 +246,8 @@ class ChatScreenState extends State<ChatScreen> {
                   stickerImage: "images/mimi7.gif",
                 ),
                 EmojiTextButton(
-                  onPressed: () => onSendMessage("mimi8", 2),
-                  stickerImage: "images/mimi8.gif",
+                  onPressed: () => onSendMessage("mimi3", 2),
+                  stickerImage: "images/mimi3.gif",
                 ),
                 EmojiTextButton(
                   onPressed: () => onSendMessage("mimi9", 2),
@@ -725,7 +725,7 @@ class ChatScreenState extends State<ChatScreen> {
 
     File file = File(pickedFile.path);
 
-    //this was also error :)
+    //this was also error
     setState(() {
       imageFile = file;
       isLoading = true;
